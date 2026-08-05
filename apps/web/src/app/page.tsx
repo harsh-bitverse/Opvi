@@ -1,18 +1,17 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { OpviTextLogo } from '@/components/brand/OpviTextLogo';
-import { AnimatedTagline } from '@/components/brand/AnimatedTagline';
+import { Header } from '@/components/header/Header';
 import { SearchBar } from '@/components/search/SearchBar';
-import { TryAskingCards } from '@/components/search/TryAskingCards';
+import { StackedSearchDeck } from '@/components/search/StackedSearchDeck';
 import { SupportingNote } from '@/components/search/SupportingNote';
 
 export default function LandingPage() {
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSelectQuery = (query: string) => {
-    setSearchValue(query);
+  const handleSelectQuery = (queryText: string) => {
+    setSearchValue(queryText);
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -26,15 +25,13 @@ export default function LandingPage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        padding: '2rem 2.5rem',
+        padding: '2.25rem 3rem',
       }}
     >
-      {/* 1. Upper-Left Brand Header */}
-      <header style={{ width: '100%' }}>
-        <OpviTextLogo />
-      </header>
+      {/* 1. Upper Header Zone: Upper-Left OPVI + Tagline, Upper-Right Sign In */}
+      <Header />
 
-      {/* 2. Main Search-First Content Section */}
+      {/* 2. Main Search-First Content Centerpiece */}
       <main
         style={{
           width: '100%',
@@ -46,9 +43,6 @@ export default function LandingPage() {
           padding: '2rem 0',
         }}
       >
-        {/* Animated Tagline */}
-        <AnimatedTagline />
-
         {/* Dominant Search Bar Centerpiece */}
         <SearchBar
           value={searchValue}
@@ -56,17 +50,17 @@ export default function LandingPage() {
           inputRef={inputRef}
         />
 
-        {/* Horizontal Reusable Search Cards */}
-        <TryAskingCards onSelectQuery={handleSelectQuery} />
+        {/* "TRY SEARCHING..." Stacked Card Deck Carousel */}
+        <StackedSearchDeck onSelectQuery={handleSelectQuery} />
       </main>
 
-      {/* 3. Bottom Viewport Region: Supporting Note */}
+      {/* 3. Bottom Viewport Zone: Supporting Helper Note */}
       <footer
         style={{
           width: '100%',
           display: 'flex',
           justifyContent: 'center',
-          paddingTop: '1rem',
+          paddingTop: '1.5rem',
         }}
       >
         <SupportingNote />

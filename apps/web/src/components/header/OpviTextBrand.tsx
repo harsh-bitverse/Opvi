@@ -9,7 +9,7 @@ const TAGLINES = [
   'Find hidden opportunities standard search misses.',
 ];
 
-export function AnimatedTagline() {
+export function OpviTextBrand() {
   const [taglineIndex, setTaglineIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -40,28 +40,37 @@ export function AnimatedTagline() {
   }, [displayText, isDeleting, taglineIndex]);
 
   return (
-    <div
-      style={{
-        minHeight: '1.5rem',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: '1rem',
-      }}
-    >
-      <p
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+      {/* OPVI Wordmark */}
+      <span
         style={{
-          fontSize: '0.9375rem',
-          fontWeight: 400,
-          color: 'var(--text-secondary)',
-          letterSpacing: '-0.005em',
-          textAlign: 'center',
+          fontSize: '2rem',
+          fontWeight: 700,
+          letterSpacing: '-0.03em',
+          color: 'var(--text-primary)',
+          lineHeight: 1.1,
+          userSelect: 'none',
         }}
-        aria-live="polite"
       >
-        <span>{displayText}</span>
-        <span className="caret-blink" aria-hidden="true" />
-      </p>
+        OPVI
+      </span>
+
+      {/* Animated Tagline Directly Beneath */}
+      <div style={{ minHeight: '1.25rem', display: 'flex', alignItems: 'center' }}>
+        <p
+          style={{
+            fontSize: '0.875rem',
+            fontWeight: 400,
+            color: 'var(--text-secondary)',
+            letterSpacing: '-0.005em',
+            margin: 0,
+          }}
+          aria-live="polite"
+        >
+          <span>{displayText}</span>
+          <span className="caret-blink" aria-hidden="true" />
+        </p>
+      </div>
     </div>
   );
 }
