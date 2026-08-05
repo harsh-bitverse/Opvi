@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PLACEHOLDERS = [
   'What opportunity are you looking for?',
@@ -19,37 +19,34 @@ interface SearchBarProps {
 
 export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Rotate placeholders while idle (not hovered or focused)
+  // Rotate placeholders while idle (not focused, not hovered, and no value)
   useEffect(() => {
-    if (isPaused || value.length > 0) return;
+    if (isFocused || isHovered || value.length > 0) return;
 
     const interval = setInterval(() => {
       setPlaceholderIndex((prev) => (prev + 1) % PLACEHOLDERS.length);
     }, 3200);
 
     return () => clearInterval(interval);
-  }, [isPaused, value]);
+  }, [isFocused, isHovered, value]);
 
-  const activePlaceholder = value ? '' : PLACEHOLDERS[placeholderIndex];
+  // When focused or has value, placeholder disappears immediately
+  const activePlaceholder = isFocused || value.length > 0 ? '' : PLACEHOLDERS[placeholderIndex];
 
   return (
     <div
-      className="search-glass-container"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => {
-        // Resume rotation if input is not focused
-        if (document.activeElement !== inputRef.current) {
-          setIsPaused(false);
-        }
-      }}
+      className="search-container"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         width: '100%',
-        maxWidth: '720px',
-        height: '64px',
-        borderRadius: '20px',
-        padding: '0 1.75rem',
+        maxWidth: '740px',
+        height: '60px',
+        borderRadius: '16px',
+        padding: '0 1.5rem',
         display: 'flex',
         alignItems: 'center',
         margin: '0 auto',
@@ -60,8 +57,8 @@ export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        onFocus={() => setIsPaused(true)}
-        onBlur={() => setIsPaused(false)}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         placeholder={activePlaceholder}
         style={{
           width: '100%',

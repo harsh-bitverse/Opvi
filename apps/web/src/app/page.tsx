@@ -1,65 +1,76 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { OpviLogo } from '@/components/brand/OpviLogo';
+import { OpviTextLogo } from '@/components/brand/OpviTextLogo';
 import { AnimatedTagline } from '@/components/brand/AnimatedTagline';
 import { SearchBar } from '@/components/search/SearchBar';
+import { TryAskingCards } from '@/components/search/TryAskingCards';
 import { SupportingNote } from '@/components/search/SupportingNote';
-import { ExampleSearches } from '@/components/search/ExampleSearches';
 
 export default function LandingPage() {
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleSelectExample = (exampleText: string) => {
-    setSearchValue(exampleText);
+  const handleSelectQuery = (query: string) => {
+    setSearchValue(query);
     if (inputRef.current) {
       inputRef.current.focus();
     }
   };
 
   return (
-    <main
-      className="entrance-fade"
+    <div
       style={{
         minHeight: '100vh',
         width: '100vw',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '2rem 1.5rem',
+        justifyContent: 'space-between',
+        padding: '2rem 2.5rem',
       }}
     >
-      <div
+      {/* 1. Upper-Left Brand Header */}
+      <header style={{ width: '100%' }}>
+        <OpviTextLogo />
+      </header>
+
+      {/* 2. Main Search-First Content Section */}
+      <main
         style={{
           width: '100%',
-          maxWidth: '800px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
+          margin: 'auto 0',
+          padding: '2rem 0',
         }}
       >
-        {/* Brand Identity */}
-        <OpviLogo />
-
-        {/* Typewriter Animated Tagline */}
+        {/* Animated Tagline */}
         <AnimatedTagline />
 
-        {/* Centerpiece Glassmorphic Search Bar */}
+        {/* Dominant Search Bar Centerpiece */}
         <SearchBar
           value={searchValue}
           onChange={setSearchValue}
           inputRef={inputRef}
         />
 
-        {/* Secondary Supporting Note */}
-        <SupportingNote />
+        {/* Horizontal Reusable Search Cards */}
+        <TryAskingCards onSelectQuery={handleSelectQuery} />
+      </main>
 
-        {/* Interactive Rotating Example Search Query */}
-        <ExampleSearches onSelectExample={handleSelectExample} />
-      </div>
-    </main>
+      {/* 3. Bottom Viewport Region: Supporting Note */}
+      <footer
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          paddingTop: '1rem',
+        }}
+      >
+        <SupportingNote />
+      </footer>
+    </div>
   );
 }
