@@ -13,19 +13,23 @@ Given a natural language query, return a ranked list of verified elite opportuni
 ### Module 00: Project Scaffold
 - **Status**: Frozen
 - **Objective**: Establish the initial project scaffold and monorepo structure to support incremental subsystem development.
-- **Scaffold Architecture**:
-  - `apps/web`: Web interface package scaffold.
-  - `packages/domain`: Domain types and contracts package scaffold.
-  - `packages/core`: Core application engine interfaces package scaffold.
-  - `packages/config`: Shared base compiler configurations.
-- **Constraints**: Implementation-agnostic foundation. Domain models, schemas, UI features, and engine abstractions remain un-frozen until subsequent modules.
+
+### Module 01: Landing Experience & Search Interface
+- **Status**: Frozen
+- **Objective**: Design and implement the showcase-grade landing experience for OPVI's MVP.
+- **Frozen UI Elements**:
+  - `OpviLogo`: Brand emblem & wordmark centered at top.
+  - `AnimatedTagline`: Typewriter & deleting animated tagline cycling concise product statements.
+  - `SearchBar`: Glassmorphic centerpiece input (`backdrop-filter: blur(20px)`), rotating placeholder prompts (paused on hover/focus), warm golden focus border emission (`rgba(217, 119, 6, 0.4)`), zero internal decorative icons.
+  - `SupportingNote`: Secondary text explaining instant search without sign-in and personalized benefits.
+  - `ExampleSearches`: Interactive rotating natural-language query examples with click-to-populate capability.
 
 ---
 
 ## 3. Subsystem Roadmap
 
 Future modules will incrementally define and freeze specifications for:
-1. **Module 01**: Product UI & Query Interface
-2. **Module 02**: Domain Models & Trusted Publisher Registry
-3. **Module 03**: Opportunity Verification Pipeline
-4. **Module 04**: Vector Embedding & AI Search Engine
+1. **Module 02**: Domain Models & Trusted Publisher Registry
+2. **Module 03**: Opportunity Verification Pipeline
+3. **Module 04**: Vector Embedding & AI Search Engine
+
