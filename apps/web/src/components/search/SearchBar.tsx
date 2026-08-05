@@ -43,10 +43,10 @@ export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
       onMouseLeave={() => setIsHovered(false)}
       style={{
         width: '100%',
-        maxWidth: '740px',
+        maxWidth: '840px',
         height: '60px',
         borderRadius: '16px',
-        padding: '0 1.5rem',
+        padding: '0 2.25rem',
         display: 'flex',
         alignItems: 'center',
         margin: '0 auto',
