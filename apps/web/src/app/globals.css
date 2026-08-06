@@ -4,19 +4,36 @@
   --text-primary: #0f172a;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  --border-glass-liquid: rgba(255, 255, 255, 0.38);
+  --gold-champagne: rgba(245, 212, 142, 0.45);
+  --gold-amber: rgba(224, 159, 62, 0.4);
+  --gold-rich: rgba(217, 119, 6, 0.35);
+  --border-glass-idle: rgba(255, 255, 255, 0.45);
+  --border-glass-hover: rgba(224, 159, 62, 0.45);
+  --border-glass-focus: rgba(224, 159, 62, 0.58);
   --border-subtle: rgba(0, 0, 0, 0.08);
   --border-hover: rgba(0, 0, 0, 0.16);
-  --shadow-liquid-glass-slab: 
-    inset 0 1.5px 2.5px rgba(255, 255, 255, 0.98), 
-    inset 0 -1px 1.5px rgba(255, 255, 255, 0.35), 
-    0 25px 60px -15px rgba(0, 0, 0, 0.045), 
-    0 10px 20px -8px rgba(0, 0, 0, 0.02);
-  --shadow-liquid-glass-hover: 
+  
+  --shadow-apple-glass-slab: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.3), 
+    0 25px 60px -15px rgba(0, 0, 0, 0.04), 
+    0 10px 20px -10px rgba(0, 0, 0, 0.02);
+
+  --shadow-glass-hover: 
     inset 0 1.5px 3px rgba(255, 255, 255, 1), 
     inset 0 -1px 1.5px rgba(255, 255, 255, 0.45), 
-    0 35px 80px -20px rgba(0, 0, 0, 0.085), 
-    0 12px 24px -8px rgba(0, 0, 0, 0.03);
+    0 30px 70px -15px rgba(0, 0, 0, 0.07), 
+    0 15px 35px -5px rgba(217, 119, 6, 0.12), 
+    0 6px 18px rgba(245, 212, 142, 0.18);
+
+  --shadow-glass-focus: 
+    inset 0 1.5px 3px rgba(255, 255, 255, 1), 
+    inset 0 -1px 1.5px rgba(255, 255, 255, 0.5), 
+    0 0 0 1px rgba(224, 159, 62, 0.25), 
+    0 35px 80px -15px rgba(0, 0, 0, 0.08), 
+    0 20px 45px -5px rgba(217, 119, 6, 0.18), 
+    0 8px 24px rgba(245, 212, 142, 0.22);
+
   --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', 'Inter', Roboto, sans-serif;
 }
@@ -33,6 +50,9 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--bg-canvas);
+  background-image: 
+    radial-gradient(circle at 50% 42%, rgba(255, 253, 248, 0.85) 0%, #faf9f6 72%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.018'/%3E%3C/svg%3E");
   color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -55,22 +75,57 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Apple Liquid Glass Material Surface (Refractive Index, Edge Dispersion, Multi-Layer Specular Highlights) */
+/* Continuous Internal Energy Flow Keyframe Animation */
+@keyframes opviEnergyFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Subconscious Ambient Breathing Keyframe Animation (7s cycle) */
+@keyframes opviAmbientBreathing {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    filter: brightness(1.03) drop-shadow(0 0 8px rgba(245, 212, 142, 0.25));
+  }
+}
+
+/* Precision Apple Glass Surface with OPVI Signature Golden Energy & Living Motion */
 .search-stadium-glass {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.68);
   background-image: 
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.22) 100%),
-    radial-gradient(ellipse 80% 65% at 50% 40%, rgba(228, 228, 232, 0.52) 0%, rgba(245, 245, 248, 0.76) 70%, rgba(255, 255, 255, 0.94) 100%);
-  backdrop-filter: blur(80px) saturate(250%) contrast(1.03) brightness(1.04);
-  -webkit-backdrop-filter: blur(80px) saturate(250%) contrast(1.03) brightness(1.04);
-  border: 1px solid var(--border-glass-liquid);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.05) 45%, rgba(255, 255, 255, 0.2) 100%),
+    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(230, 230, 235, 0.45) 0%, rgba(248, 248, 250, 0.72) 75%, rgba(255, 255, 255, 0.9) 100%),
+    linear-gradient(120deg, transparent 20%, rgba(245, 212, 142, 0.25) 40%, rgba(224, 159, 62, 0.3) 60%, transparent 80%);
+  background-size: 100% 100%, 100% 100%, 200% 200%;
+  animation: opviEnergyFlow 12s ease-in-out infinite, opviAmbientBreathing 7s ease-in-out infinite;
+  backdrop-filter: blur(80px) saturate(240%) contrast(1.02) brightness(1.06);
+  -webkit-backdrop-filter: blur(80px) saturate(240%) contrast(1.02) brightness(1.06);
+  border: 1px solid var(--border-glass-idle);
   border-radius: 9999px;
-  box-shadow: var(--shadow-liquid-glass-slab);
+  box-shadow: var(--shadow-apple-glass-slab);
   transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .search-stadium-glass:hover {
   transform: translateY(-2px) scale(1.012);
-  box-shadow: var(--shadow-liquid-glass-hover);
+  border-color: var(--border-glass-hover);
+  box-shadow: var(--shadow-glass-hover);
+}
+
+.search-stadium-glass:focus-within {
+  transform: translateY(-2px) scale(1.012);
+  border-color: var(--border-glass-focus);
+  box-shadow: var(--shadow-glass-focus);
 }
 
 /* Card styling */
@@ -88,4 +143,10 @@ body {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-stadium-glass {
+    animation: none;
+  }
 }
