@@ -99,39 +99,55 @@ body {
     0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-/* Continuous Organic Gold Illumination Curve Keyframes (6.5s cycle: ease-in -> hold -> ease-out -> rest) */
-@keyframes nameplateOrganicPulse {
-  0%, 100% {
-    background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
-  }
-  25% {
-    background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
-    filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
-  }
-  55% {
-    background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
-    filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
-  }
-  80% {
-    background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
-  }
-}
-
-/* Dynamic Machined Cut-Through Engraving with Organic Gold Pulse Animation */
-.opvi-cnc-text {
+/* Base Canvas Cut-Through Layer */
+.opvi-cnc-text-base {
   font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
   background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
   background-size: 100% 100%;
-  animation: nameplateOrganicPulse 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
+}
+
+/* Architectural Power-On / Power-Down Breathing Keyframes (8s cycle: 2.4s ease-in, 1.6s hold, 2.4s ease-out, 1.6s rest) */
+@keyframes opviGoldBreathing {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Architectural Gold Breathing Overlay Layer */
+.opvi-cnc-text-gold {
+  position: absolute;
+  inset: 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.98) 0%, rgba(224, 159, 62, 0.98) 100%);
+  background-size: 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
+  animation: opviGoldBreathing 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
 }
 
 /* Non-linear organic energy flow keyframes */
@@ -209,7 +225,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .search-stadium-glass,
-  .opvi-cnc-text,
+  .opvi-cnc-text-gold,
   .opvi-machined-nameplate {
     animation: none;
   }

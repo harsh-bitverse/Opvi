@@ -41,11 +41,18 @@ export function OpviTextBrand() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', alignItems: 'flex-start' }}>
-      {/* Precision-Machined Industrial Rectangular Nameplate */}
+      {/* Dual-Layer Precision-Machined Industrial Nameplate */}
       <div className="opvi-machined-nameplate">
-        <span className="opvi-cnc-text">
-          OPVI
-        </span>
+        <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+          {/* Base Cut-Through Canvas Layer */}
+          <span className="opvi-cnc-text-base">
+            OPVI
+          </span>
+          {/* Architectural Gold Breathing Light Overlay Layer */}
+          <span className="opvi-cnc-text-gold" aria-hidden="true">
+            OPVI
+          </span>
+        </div>
       </div>
 
       {/* Animated Tagline Directly Beneath (0.875rem / 14px) */}
