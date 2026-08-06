@@ -41,21 +41,12 @@ export function OpviTextBrand() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-      {/* OPVI Wordmark (2.125rem / 34px - 20% scale refinement) */}
-      <span
-        style={{
-          fontSize: '2.125rem',
-          fontWeight: 700,
-          letterSpacing: '-0.03em',
-          color: 'var(--text-primary)',
-          lineHeight: 1.1,
-          userSelect: 'none',
-        }}
-      >
+      {/* Precision Crystal-Etched OPVI Wordmark */}
+      <span className="opvi-crystal-wordmark">
         OPVI
       </span>
 
-      {/* Animated Tagline Directly Beneath (0.875rem / 14px - 20% scale refinement) */}
+      {/* Animated Tagline Directly Beneath (0.875rem / 14px) */}
       <div style={{ minHeight: '1.25rem', display: 'flex', alignItems: 'center' }}>
         <p
           style={{
