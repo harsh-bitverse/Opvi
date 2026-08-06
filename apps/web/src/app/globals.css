@@ -86,29 +86,40 @@ body {
     0 1px 3px rgba(0, 0, 0, 0.02);
   user-select: none;
   overflow: hidden;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
 }
 
-/* Unified Gold Pulse Keyframes (Simultaneous illumination -> hold -> gentle fade -> 5.5s cycle) */
-@keyframes nameplateUnifiedPulse {
+.opvi-machined-nameplate:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.98), 
+    inset 0 -1px 1px rgba(0, 0, 0, 0.07), 
+    0 8px 24px -4px rgba(0, 0, 0, 0.06), 
+    0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* Continuous Organic Gold Illumination Curve Keyframes (6.5s cycle: ease-in -> hold -> ease-out -> rest) */
+@keyframes nameplateOrganicPulse {
   0%, 100% {
     background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  20% {
+  25% {
     background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
     filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  50% {
+  55% {
     background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
     filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  75% {
+  80% {
     background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
 }
 
-/* Dynamic Machined Cut-Through Engraving with Unified Gold Pulse Animation */
+/* Dynamic Machined Cut-Through Engraving with Organic Gold Pulse Animation */
 .opvi-cnc-text {
   font-size: 1.875rem;
   font-weight: 700;
@@ -116,7 +127,7 @@ body {
   line-height: 1;
   background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
   background-size: 100% 100%;
-  animation: nameplateUnifiedPulse 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation: nameplateOrganicPulse 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -198,7 +209,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .search-stadium-glass,
-  .opvi-cnc-text {
+  .opvi-cnc-text,
+  .opvi-machined-nameplate {
     animation: none;
   }
 }
