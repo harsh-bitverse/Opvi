@@ -69,30 +69,27 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Precision Engraved Crystal Nameplate Styling */
-.opvi-crystal-nameplate {
+/* Solid Precision-Machined Industrial Rectangular Nameplate (Ceramic / Matte Acrylic) */
+.opvi-machined-nameplate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
   width: fit-content;
-  background-image: 
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0.25) 100%),
-    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(230, 230, 235, 0.45) 0%, rgba(248, 248, 250, 0.72) 75%, rgba(255, 255, 255, 0.9) 100%);
-  backdrop-filter: blur(40px) saturate(220%) contrast(1.02);
-  -webkit-backdrop-filter: blur(40px) saturate(220%) contrast(1.02);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  background-color: var(--bg-canvas);
+  border: 1px solid rgba(255, 255, 255, 0.75);
   box-shadow: 
-    inset 0 1px 1.5px rgba(255, 255, 255, 0.95), 
-    inset 0 -0.75px 1px rgba(255, 255, 255, 0.3), 
-    0 8px 20px -6px rgba(0, 0, 0, 0.035);
+    inset 0 1px 1px rgba(255, 255, 255, 0.95), 
+    inset 0 -1px 1px rgba(0, 0, 0, 0.05), 
+    0 3px 10px -2px rgba(0, 0, 0, 0.04), 
+    0 1px 3px rgba(0, 0, 0, 0.02);
   user-select: none;
 }
 
-/* Recessed Laser-Engraved Typography */
-.opvi-engraved-text {
-  font-size: 1.25rem;
+/* CNC Laser-Machined Internal Fillet Typography */
+.opvi-cnc-text {
+  font-size: 1.1875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -100,7 +97,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 -0.75px 0.5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0.75px 1px rgba(255, 255, 255, 0.9));
+  filter: drop-shadow(0 -0.5px 0.5px rgba(0, 0, 0, 0.4)) drop-shadow(0 0.5px 1px rgba(255, 255, 255, 0.95));
 }
 
 /* Non-linear organic energy flow keyframes */

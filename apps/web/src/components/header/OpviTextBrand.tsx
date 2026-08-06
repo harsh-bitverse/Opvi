@@ -40,10 +40,10 @@ export function OpviTextBrand() {
   }, [displayText, isDeleting, taglineIndex]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', alignItems: 'flex-start' }}>
-      {/* Engraved Crystal Capsule Nameplate */}
-      <div className="opvi-crystal-nameplate">
-        <span className="opvi-engraved-text">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', alignItems: 'flex-start' }}>
+      {/* Precision-Machined Industrial Rectangular Nameplate */}
+      <div className="opvi-machined-nameplate">
+        <span className="opvi-cnc-text">
           OPVI
         </span>
       </div>
