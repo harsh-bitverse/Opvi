@@ -17,18 +17,15 @@ interface StackedSearchDeckProps {
 
 export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
-  // Continuously cycle through deck unless hovered
+  // Continuously cycle through deck
   useEffect(() => {
-    if (isHovered) return;
-
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % SEARCH_QUERIES.length);
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, []);
 
   const total = SEARCH_QUERIES.length;
 
@@ -43,7 +40,7 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
         alignItems: 'center',
       }}
     >
-      {/* 20% scale reduced Stacked Card Deck Container (304px x 58px) */}
+      {/* Rigid dimension-locked Stacked Card Deck Container (304px x 58px) */}
       <div
         style={{
           position: 'relative',
@@ -69,9 +66,8 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
           return (
             <div
               key={index}
+              className="search-card"
               onClick={() => isFront && onSelectQuery(query)}
-              onMouseEnter={() => isFront && setIsHovered(true)}
-              onMouseLeave={() => isFront && setIsHovered(false)}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -80,20 +76,11 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 height: '58px',
                 padding: '0.6rem 0.9rem',
                 borderRadius: '10px',
-                background: 'var(--bg-surface)',
-                border: '1px solid var(--border-subtle)',
-                boxShadow: isFront
-                  ? isHovered
-                    ? '0 10px 24px -5px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.03)'
-                    : '0 5px 18px -5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02)'
-                  : '0 3px 8px -4px rgba(0, 0, 0, 0.04)',
-                transform: isFront && isHovered
-                  ? `translate(${translateX}px, ${translateY - 2}px) scale(1.015)`
-                  : `translate(${translateX}px, ${translateY}px) scale(${scale})`,
+                transform: `translate(${translateX}px, ${translateY}px) scale(${scale})`,
                 opacity: opacity,
                 zIndex: zIndex,
                 cursor: isFront ? 'pointer' : 'default',
-                transition: 'all 450ms cubic-bezier(0.16, 1, 0.3, 1)',
+                transition: 'transform 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms cubic-bezier(0.16, 1, 0.3, 1)',
                 userSelect: 'none',
                 display: 'flex',
                 alignItems: 'center',

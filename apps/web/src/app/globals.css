@@ -4,14 +4,8 @@
   --text-primary: #0f172a;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  --gold-champagne: rgba(245, 212, 142, 0.42);
-  --gold-amber: rgba(224, 159, 62, 0.36);
-  --gold-rich: rgba(217, 119, 6, 0.32);
-  --border-glass-idle: rgba(255, 255, 255, 0.45);
-  --border-glass-hover: rgba(224, 159, 62, 0.42);
-  --border-glass-focus: rgba(224, 159, 62, 0.55);
+  --border-glass-slab: rgba(255, 255, 255, 0.4);
   --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(0, 0, 0, 0.16);
   
   --shadow-apple-glass-slab: 
     inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 
@@ -19,21 +13,20 @@
     0 25px 60px -15px rgba(0, 0, 0, 0.04), 
     0 10px 20px -10px rgba(0, 0, 0, 0.02);
 
-  /* Hover illumination dampened by 50% for subtle light escape */
+  /* Hover illumination: Warm light escaping from inside glass without outlining edges */
   --shadow-glass-hover: 
     inset 0 1.5px 3px rgba(255, 255, 255, 1), 
     inset 0 -1px 1.5px rgba(255, 255, 255, 0.45), 
-    0 30px 70px -15px rgba(0, 0, 0, 0.06), 
-    0 12px 28px -5px rgba(217, 119, 6, 0.06), 
-    0 5px 14px rgba(245, 212, 142, 0.09);
+    0 30px 70px -15px rgba(0, 0, 0, 0.055), 
+    0 10px 24px -5px rgba(217, 119, 6, 0.04), 
+    0 4px 12px rgba(245, 212, 142, 0.06);
 
   --shadow-glass-focus: 
     inset 0 1.5px 3px rgba(255, 255, 255, 1), 
     inset 0 -1px 1.5px rgba(255, 255, 255, 0.5), 
-    0 0 0 1px rgba(224, 159, 62, 0.22), 
-    0 35px 80px -15px rgba(0, 0, 0, 0.07), 
-    0 15px 35px -5px rgba(217, 119, 6, 0.1), 
-    0 6px 18px rgba(245, 212, 142, 0.14);
+    0 35px 80px -15px rgba(0, 0, 0, 0.075), 
+    0 14px 30px -5px rgba(217, 119, 6, 0.07), 
+    0 5px 15px rgba(245, 212, 142, 0.1);
 
   --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', 'Inter', Roboto, sans-serif;
@@ -76,7 +69,7 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Non-linear organic energy flow keyframes (slowing around stadium ends) */
+/* Non-linear organic energy flow keyframes */
 @keyframes opviEnergyFlow {
   0% {
     background-position: 0% 50%;
@@ -95,17 +88,17 @@ body {
   }
 }
 
-/* Subconscious Ambient Breathing Keyframe Animation (7s cycle) */
+/* Subconscious Ambient Breathing Keyframe Animation */
 @keyframes opviAmbientBreathing {
   0%, 100% {
-    filter: brightness(1) drop-shadow(0 0 0px transparent);
+    filter: brightness(1);
   }
   50% {
-    filter: brightness(1.02) drop-shadow(0 0 6px rgba(245, 212, 142, 0.18));
+    filter: brightness(1.02);
   }
 }
 
-/* Precision Optical Glass Slab Surface with Softer Sheen & Non-Linear Light Transmission */
+/* Precision Optical Glass Slab Surface with Cursor-Responsive Internal Energy Field */
 .search-stadium-glass {
   position: relative;
   background-color: rgba(255, 255, 255, 0.68);
@@ -117,30 +110,27 @@ body {
   animation: opviEnergyFlow 14s cubic-bezier(0.42, 0, 0.58, 1) infinite, opviAmbientBreathing 7s ease-in-out infinite;
   backdrop-filter: blur(80px) saturate(240%) contrast(1.03) brightness(1.05);
   -webkit-backdrop-filter: blur(80px) saturate(240%) contrast(1.03) brightness(1.05);
-  border: 1px solid var(--border-glass-idle);
+  border: 1px solid var(--border-glass-slab);
   border-radius: 9999px;
   box-shadow: var(--shadow-apple-glass-slab);
-  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .search-stadium-glass:hover {
   transform: translateY(-2px) scale(1.012);
-  border-color: var(--border-glass-hover);
   box-shadow: var(--shadow-glass-hover);
 }
 
 .search-stadium-glass:focus-within {
   transform: translateY(-2px) scale(1.012);
-  border-color: var(--border-glass-focus);
   box-shadow: var(--shadow-glass-focus);
 }
 
-/* Card styling */
+/* Example Search Card styling - Static supporting cards with ZERO hover motion */
 .search-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-card);
-  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Hide scrollbar */
