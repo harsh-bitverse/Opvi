@@ -38,15 +38,14 @@ export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
 
   return (
     <div
-      className="search-container"
+      className="search-stadium-glass"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
         width: '100%',
-        maxWidth: '840px',
+        maxWidth: '900px',
         height: '60px',
-        borderRadius: '16px',
-        padding: '0 2.25rem',
+        padding: '0 2.75rem',
         display: 'flex',
         alignItems: 'center',
         margin: '0 auto',
