@@ -36,19 +36,19 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
     <div
       style={{
         width: '100%',
-        maxWidth: '1140px',
+        maxWidth: '912px',
         marginTop: '1.25rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      {/* Rigid dimension-locked Stacked Card Deck Container (380px x 72px) */}
+      {/* 20% scale reduced Stacked Card Deck Container (304px x 58px) */}
       <div
         style={{
           position: 'relative',
-          width: '380px',
-          height: '72px',
+          width: '304px',
+          height: '58px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -60,8 +60,8 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
 
           const isFront = offset === 0;
 
-          const translateX = offset * 14;
-          const translateY = offset * 4;
+          const translateX = offset * 12;
+          const translateY = offset * 3.5;
           const scale = 1 - offset * 0.04;
           const opacity = isFront ? 1 : 1 - offset * 0.35;
           const zIndex = 3 - offset;
@@ -76,19 +76,19 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                width: '380px',
-                height: '72px',
-                padding: '0.75rem 1.125rem',
-                borderRadius: '12px',
+                width: '304px',
+                height: '58px',
+                padding: '0.6rem 0.9rem',
+                borderRadius: '10px',
                 background: 'var(--bg-surface)',
                 border: '1px solid var(--border-subtle)',
                 boxShadow: isFront
                   ? isHovered
-                    ? '0 12px 28px -6px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.03)'
-                    : '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02)'
-                  : '0 3px 10px -4px rgba(0, 0, 0, 0.04)',
+                    ? '0 10px 24px -5px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.03)'
+                    : '0 5px 18px -5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02)'
+                  : '0 3px 8px -4px rgba(0, 0, 0, 0.04)',
                 transform: isFront && isHovered
-                  ? `translate(${translateX}px, ${translateY - 3}px) scale(1.015)`
+                  ? `translate(${translateX}px, ${translateY - 2}px) scale(1.015)`
                   : `translate(${translateX}px, ${translateY}px) scale(${scale})`,
                 opacity: opacity,
                 zIndex: zIndex,
@@ -102,7 +102,7 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
             >
               <p
                 style={{
-                  fontSize: '0.78125rem',
+                  fontSize: '0.6875rem',
                   fontWeight: 500,
                   color: isFront ? 'var(--text-primary)' : 'var(--text-secondary)',
                   lineHeight: 1.35,

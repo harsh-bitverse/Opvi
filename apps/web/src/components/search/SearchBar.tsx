@@ -42,10 +42,10 @@ export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        width: '92vw',
-        maxWidth: '1140px',
-        height: '88px',
-        padding: '0 3.75rem',
+        width: '90vw',
+        maxWidth: '912px',
+        height: '70px',
+        padding: '0 3rem',
         display: 'flex',
         alignItems: 'center',
         margin: '0 auto',
@@ -65,7 +65,7 @@ export function SearchBar({ value, onChange, inputRef }: SearchBarProps) {
           border: 'none',
           outline: 'none',
           background: 'transparent',
-          fontSize: '1.375rem',
+          fontSize: '1.125rem',
           fontWeight: 400,
           color: 'var(--text-primary)',
           letterSpacing: '-0.01em',
