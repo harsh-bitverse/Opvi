@@ -88,43 +88,39 @@ body {
   overflow: hidden;
 }
 
-/* Left-to-Right Concentrated Golden Scanning Reveal Keyframes (9s cycle) */
-@keyframes nameplateGoldenReveal {
-  0% {
-    background-position: -150% 0;
+/* Unified Gold Pulse Keyframes (Simultaneous illumination -> hold -> gentle fade -> 5.5s cycle) */
+@keyframes nameplateUnifiedPulse {
+  0%, 100% {
+    background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  35% {
-    background-position: 50% 0;
+  20% {
+    background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
+    filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  70% {
-    background-position: 250% 0;
+  50% {
+    background-image: linear-gradient(135deg, rgba(245, 212, 142, 0.95) 0%, rgba(224, 159, 62, 0.95) 100%);
+    filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
-  100% {
-    background-position: 250% 0;
+  75% {
+    background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
   }
 }
 
-/* Dynamic Machined Cut-Through Engraving with Concentrated Golden Reveal */
+/* Dynamic Machined Cut-Through Engraving with Unified Gold Pulse Animation */
 .opvi-cnc-text {
   font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  background-image: linear-gradient(
-    90deg,
-    rgb(242, 243, 245) 0%,
-    rgb(242, 243, 245) 30%,
-    rgba(245, 212, 142, 0.95) 48%,
-    rgba(224, 159, 62, 0.95) 52%,
-    rgb(250, 249, 246) 70%,
-    rgb(250, 249, 246) 100%
-  );
-  background-size: 250% 100%;
-  animation: nameplateGoldenReveal 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
+  background-size: 100% 100%;
+  animation: nameplateUnifiedPulse 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.11)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
 }
 
 /* Non-linear organic energy flow keyframes */
