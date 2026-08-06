@@ -74,7 +74,7 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 left: 0,
                 width: '304px',
                 height: '58px',
-                padding: '0.6rem 0.9rem',
+                padding: '0.5rem 0.85rem',
                 borderRadius: '10px',
                 transform: `translate(${translateX}px, ${translateY}px) scale(${scale})`,
                 opacity: opacity,
@@ -84,16 +84,18 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 userSelect: 'none',
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 boxSizing: 'border-box',
               }}
             >
               <p
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.84375rem',
                   fontWeight: 500,
                   color: isFront ? 'var(--text-primary)' : 'var(--text-secondary)',
-                  lineHeight: 1.35,
+                  lineHeight: 1.3,
                   margin: 0,
+                  textAlign: 'center',
                   display: '-webkit-box',
                   WebkitLineClamp: 2,
                   WebkitBoxOrient: 'vertical',
