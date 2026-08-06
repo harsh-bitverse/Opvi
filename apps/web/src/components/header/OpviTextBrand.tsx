@@ -40,11 +40,11 @@ export function OpviTextBrand() {
   }, [displayText, isDeleting, taglineIndex]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-      {/* OPVI Wordmark */}
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
+      {/* OPVI Wordmark (+30% scale increase) */}
       <span
         style={{
-          fontSize: '2rem',
+          fontSize: '2.625rem',
           fontWeight: 700,
           letterSpacing: '-0.03em',
           color: 'var(--text-primary)',
@@ -55,11 +55,11 @@ export function OpviTextBrand() {
         OPVI
       </span>
 
-      {/* Animated Tagline Directly Beneath */}
-      <div style={{ minHeight: '1.25rem', display: 'flex', alignItems: 'center' }}>
+      {/* Animated Tagline Directly Beneath (+20% scale increase) */}
+      <div style={{ minHeight: '1.5rem', display: 'flex', alignItems: 'center' }}>
         <p
           style={{
-            fontSize: '0.875rem',
+            fontSize: '1.05rem',
             fontWeight: 400,
             color: 'var(--text-secondary)',
             letterSpacing: '-0.005em',

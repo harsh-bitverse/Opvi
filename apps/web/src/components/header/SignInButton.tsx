@@ -8,11 +8,11 @@ export function SignInButton() {
       href="#"
       onClick={(e) => e.preventDefault()}
       style={{
-        fontSize: '0.9375rem',
+        fontSize: '1.125rem',
         fontWeight: 500,
         color: 'var(--text-primary)',
         textDecoration: 'none',
-        padding: '0.375rem 0.75rem',
+        padding: '0.5rem 0.875rem',
         borderRadius: '8px',
         transition: 'opacity 150ms ease',
       }}

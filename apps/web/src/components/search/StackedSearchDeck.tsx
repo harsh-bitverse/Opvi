@@ -43,12 +43,11 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
         alignItems: 'center',
       }}
     >
-      {/* Reduced visual mass search card container (2.5-3x smaller than search bar) */}
+      {/* Rigid dimension-locked Stacked Card Deck Container (380px x 72px) */}
       <div
         style={{
           position: 'relative',
-          width: '100%',
-          maxWidth: '380px',
+          width: '380px',
           height: '72px',
           display: 'flex',
           justifyContent: 'center',
@@ -77,7 +76,8 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                width: '100%',
+                width: '380px',
+                height: '72px',
                 padding: '0.75rem 1.125rem',
                 borderRadius: '12px',
                 background: 'var(--bg-surface)',
@@ -97,6 +97,7 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                 userSelect: 'none',
                 display: 'flex',
                 alignItems: 'center',
+                boxSizing: 'border-box',
               }}
             >
               <p
@@ -106,6 +107,11 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
                   color: isFront ? 'var(--text-primary)' : 'var(--text-secondary)',
                   lineHeight: 1.35,
                   margin: 0,
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  width: '100%',
                 }}
               >
                 &ldquo;{query}&rdquo;
