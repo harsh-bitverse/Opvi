@@ -1,5 +1,5 @@
 :root {
-  --bg-canvas: #faf8f4;
+  --bg-canvas: rgb(250, 249, 246);
   --bg-surface: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #64748b;
@@ -45,7 +45,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-canvas);
   background-image: 
-    radial-gradient(circle at 50% 42%, rgba(255, 252, 245, 0.88) 0%, #faf8f4 75%),
+    radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.018'/%3E%3C/svg%3E");
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -98,7 +98,7 @@ body {
   }
 }
 
-/* Precision Optical Glass Slab Surface with Cursor-Responsive Internal Energy Field */
+/* Precision Optical Glass Slab Surface */
 .search-stadium-glass {
   position: relative;
   background-color: rgba(255, 255, 255, 0.68);
