@@ -36,20 +36,20 @@ export function StackedSearchDeck({ onSelectQuery }: StackedSearchDeckProps) {
     <div
       style={{
         width: '100%',
-        maxWidth: '900px',
-        marginTop: '2rem',
+        maxWidth: '1140px',
+        marginTop: '1.25rem',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      {/* Reduced footprint Stacked Card Deck Container */}
+      {/* Reduced visual mass search card container (2.5-3x smaller than search bar) */}
       <div
         style={{
           position: 'relative',
           width: '100%',
-          maxWidth: '400px',
-          height: '74px',
+          maxWidth: '380px',
+          height: '72px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

@@ -1,15 +1,18 @@
 :root {
   --bg-canvas: #faf9f6;
   --bg-surface: #ffffff;
-  --bg-glass-stadium: rgba(255, 255, 255, 0.72);
+  --bg-glass-stadium: rgba(255, 255, 255, 0.68);
   --text-primary: #0f172a;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  --border-glass: rgba(0, 0, 0, 0.06);
-  --border-glass-rim: rgba(255, 255, 255, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.5);
   --border-subtle: rgba(0, 0, 0, 0.08);
   --border-hover: rgba(0, 0, 0, 0.16);
-  --shadow-glass: inset 0 1px 1.5px var(--border-glass-rim), 0 12px 32px -10px rgba(0, 0, 0, 0.05);
+  --shadow-apple-glass: 
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.95), 
+    inset 0 -1px 2px rgba(255, 255, 255, 0.4), 
+    0 20px 50px -15px rgba(0, 0, 0, 0.06), 
+    0 4px 12px rgba(0, 0, 0, 0.02);
   --shadow-card: 0 4px 12px -2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
   --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', 'Inter', Roboto, sans-serif;
 }
@@ -48,14 +51,14 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Stadium capsule glassmorphism search container */
+/* True Apple-Grade Frosted Glass Stadium Search Surface */
 .search-stadium-glass {
   background: var(--bg-glass-stadium);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(40px) saturate(210%) brightness(1.04);
+  -webkit-backdrop-filter: blur(40px) saturate(210%) brightness(1.04);
   border: 1px solid var(--border-glass);
   border-radius: 9999px;
-  box-shadow: var(--shadow-glass);
+  box-shadow: var(--shadow-apple-glass);
   transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
