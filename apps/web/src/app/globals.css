@@ -69,35 +69,35 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Solid Precision-Machined Industrial Rectangular Nameplate (Ceramic / Matte Acrylic) */
+/* Solid Precision-Machined Industrial Rectangular Nameplate (+60% Scale Increase) */
 .opvi-machined-nameplate {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
+  padding: 0.65rem 1.35rem;
+  border-radius: 8px;
   width: fit-content;
   background-color: var(--bg-canvas);
   border: 1px solid rgba(255, 255, 255, 0.75);
   box-shadow: 
     inset 0 1px 1px rgba(255, 255, 255, 0.95), 
     inset 0 -1px 1px rgba(0, 0, 0, 0.05), 
-    0 3px 10px -2px rgba(0, 0, 0, 0.04), 
+    0 4px 14px -3px rgba(0, 0, 0, 0.04), 
     0 1px 3px rgba(0, 0, 0, 0.02);
   user-select: none;
 }
 
-/* CNC Laser-Machined Internal Fillet Typography */
+/* True Cut-Through Background Engraving (Exposes Canvas Color Beneath with Smooth Fillet Shadows) */
 .opvi-cnc-text {
-  font-size: 1.1875rem;
+  font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  background-image: linear-gradient(180deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 -0.5px 0.5px rgba(0, 0, 0, 0.4)) drop-shadow(0 0.5px 1px rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
 }
 
 /* Non-linear organic energy flow keyframes */
