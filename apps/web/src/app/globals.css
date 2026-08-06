@@ -113,18 +113,18 @@ body {
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
 }
 
-/* Architectural Power-On / Power-Down Breathing Keyframes (8s cycle: 2.4s ease-in, 1.6s hold, 2.4s ease-out, 1.6s rest) */
+/* Refined Timing Keyframes (7s cycle: 15% fade-in [1.05s], 55% hold [3.85s], 15% fade-out [1.05s], 15% rest [1.05s]) */
 @keyframes opviGoldBreathing {
   0% {
     opacity: 0;
   }
-  30% {
+  15% {
     opacity: 1;
   }
-  50% {
+  70% {
     opacity: 1;
   }
-  80% {
+  85% {
     opacity: 0;
   }
   100% {
@@ -146,7 +146,7 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 1px 1.5px rgba(217, 119, 6, 0.22)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
-  animation: opviGoldBreathing 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: opviGoldBreathing 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   pointer-events: none;
 }
 
