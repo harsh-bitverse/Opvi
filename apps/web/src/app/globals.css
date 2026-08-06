@@ -69,7 +69,7 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Solid Precision-Machined Industrial Rectangular Nameplate (+60% Scale Increase) */
+/* Solid Precision-Machined Industrial Rectangular Nameplate */
 .opvi-machined-nameplate {
   display: inline-flex;
   align-items: center;
@@ -85,19 +85,46 @@ body {
     0 4px 14px -3px rgba(0, 0, 0, 0.04), 
     0 1px 3px rgba(0, 0, 0, 0.02);
   user-select: none;
+  overflow: hidden;
 }
 
-/* True Cut-Through Background Engraving (Exposes Canvas Color Beneath with Smooth Fillet Shadows) */
+/* Left-to-Right Concentrated Golden Scanning Reveal Keyframes (9s cycle) */
+@keyframes nameplateGoldenReveal {
+  0% {
+    background-position: -150% 0;
+  }
+  35% {
+    background-position: 50% 0;
+  }
+  70% {
+    background-position: 250% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+
+/* Dynamic Machined Cut-Through Engraving with Concentrated Golden Reveal */
 .opvi-cnc-text {
   font-size: 1.875rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
-  background-image: radial-gradient(ellipse 95% 85% at 50% 42%, rgb(242, 243, 245) 0%, rgb(250, 249, 246) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgb(242, 243, 245) 0%,
+    rgb(242, 243, 245) 30%,
+    rgba(245, 212, 142, 0.95) 48%,
+    rgba(224, 159, 62, 0.95) 52%,
+    rgb(250, 249, 246) 70%,
+    rgb(250, 249, 246) 100%
+  );
+  background-size: 250% 100%;
+  animation: nameplateGoldenReveal 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.09)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.11)) drop-shadow(0 -0.5px 0.5px rgba(255, 255, 255, 0.95));
 }
 
 /* Non-linear organic energy flow keyframes */
@@ -174,7 +201,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .search-stadium-glass {
+  .search-stadium-glass,
+  .opvi-cnc-text {
     animation: none;
   }
 }
