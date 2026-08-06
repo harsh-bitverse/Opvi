@@ -69,32 +69,38 @@ body {
   animation: blinkCaret 1s infinite;
 }
 
-/* Crystal Wordmark Ambient Reflection Keyframes (16s cycle) */
-@keyframes crystalReflect {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+/* Precision Engraved Crystal Nameplate Styling */
+.opvi-crystal-nameplate {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  width: fit-content;
+  background-image: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0.25) 100%),
+    radial-gradient(ellipse 85% 70% at 50% 40%, rgba(230, 230, 235, 0.45) 0%, rgba(248, 248, 250, 0.72) 75%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(40px) saturate(220%) contrast(1.02);
+  -webkit-backdrop-filter: blur(40px) saturate(220%) contrast(1.02);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.95), 
+    inset 0 -0.75px 1px rgba(255, 255, 255, 0.3), 
+    0 8px 20px -6px rgba(0, 0, 0, 0.035);
+  user-select: none;
 }
 
-/* Precision Crystal-Etched Wordmark Styling */
-.opvi-crystal-wordmark {
-  font-size: 2.125rem;
+/* Recessed Laser-Engraved Typography */
+.opvi-engraved-text {
+  font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: -0.038em;
-  line-height: 1.1;
-  user-select: none;
-  background-image: 
-    linear-gradient(180deg, #0f172a 0%, #1e293b 45%, #475569 85%, #64748b 100%),
-    linear-gradient(120deg, transparent 20%, rgba(245, 212, 142, 0.45) 45%, rgba(224, 159, 62, 0.35) 55%, transparent 80%);
-  background-size: 100% 100%, 200% 200%;
-  animation: crystalReflect 16s ease-in-out infinite;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background-image: linear-gradient(180deg, #1e293b 0%, #334155 50%, #475569 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.85)) drop-shadow(0 -0.5px 0.5px rgba(15, 23, 42, 0.2));
+  filter: drop-shadow(0 -0.75px 0.5px rgba(0, 0, 0, 0.35)) drop-shadow(0 0.75px 1px rgba(255, 255, 255, 0.9));
 }
 
 /* Non-linear organic energy flow keyframes */
@@ -171,8 +177,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .search-stadium-glass,
-  .opvi-crystal-wordmark {
+  .search-stadium-glass {
     animation: none;
   }
 }

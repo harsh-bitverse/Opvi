@@ -40,11 +40,13 @@ export function OpviTextBrand() {
   }, [displayText, isDeleting, taglineIndex]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-      {/* Precision Crystal-Etched OPVI Wordmark */}
-      <span className="opvi-crystal-wordmark">
-        OPVI
-      </span>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', alignItems: 'flex-start' }}>
+      {/* Engraved Crystal Capsule Nameplate */}
+      <div className="opvi-crystal-nameplate">
+        <span className="opvi-engraved-text">
+          OPVI
+        </span>
+      </div>
 
       {/* Animated Tagline Directly Beneath (0.875rem / 14px) */}
       <div style={{ minHeight: '1.25rem', display: 'flex', alignItems: 'center' }}>
