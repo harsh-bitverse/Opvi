@@ -5,6 +5,14 @@
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@node-rs/argon2": "^1.8.3",
+    "@opvi/domain": "*"
+  },
+  "devDependencies": {
+    "vitest": "^1.6.0"
   }
 }
